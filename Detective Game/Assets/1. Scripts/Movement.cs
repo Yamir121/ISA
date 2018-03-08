@@ -19,13 +19,26 @@ public class Movement : MonoBehaviour
         mousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
         if (mousePosition.x >= 0.998f)
         {
-            t.position = new Vector3(t.position.x + 0.04f,t.position.y,0);
+            Move(0);
         }
 
         if (mousePosition.x <= 0.002f)
         {
-            t.position = new Vector3(t.position.x - 0.04f, t.position.y, 0);
+            Move(1);
         }
 
     }
+
+    public void Move(int i)
+    {
+        if (i == 0)
+        {
+            t.position = new Vector3(t.position.x + 0.04f, t.position.y, 0);
+        }
+        else if (i == 1)
+        {
+            t.position = new Vector3(t.position.x - 0.04f, t.position.y, 0);
+        }
+    }
+
 }
