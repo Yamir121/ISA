@@ -4,29 +4,21 @@ using System;
 
 public class Movement : MonoBehaviour
 {
-    //The mousePosition is a vector three, where x,y,z is 0,0,0 at left bottom and 1,1,0 at right top.
-    static Vector3 mousePosition;
-    Transform t;
+    private Transform t;
+    [SerializeField]
+    private Vector2 xLimit;
+    [SerializeField]
+    private Vector2 yLimit;
+    [SerializeField]
+    private float zoomedSize = 0.22f;
+    [SerializeField]
+    private const float standardSize = 0.65f;
 
     private void Start()
     {
         t = gameObject.GetComponent<Transform>();
-    }
-
-
-    private void Update()
-    {
-        mousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
-        if (mousePosition.x >= 0.998f)
-        {
-            Move(0);
-        }
-
-        if (mousePosition.x <= 0.002f)
-        {
-            Move(1);
-        }
-
+        xLimit = new Vector2(-2,2);
+        yLimit = new Vector2(-2, 2);
     }
 
     public void Move(int i)
@@ -41,7 +33,22 @@ public class Movement : MonoBehaviour
         }
     }
 
+    public void ZoomTo(Transform _t)
+    {
+        Camera.main.orthographicSize = zoomedSize;
+        t.position = _t.position;
+        t.rotation = _t.rotation;
+    }
 
+    public void Limit(Vector2 x)
+    {
+        Debug.Log(x.x);
+        Debug.Log(x.y);
+    }
 
+    public void Limit(Vector2 x, Vector2 y)
+    {
+        
+    }
 
 }

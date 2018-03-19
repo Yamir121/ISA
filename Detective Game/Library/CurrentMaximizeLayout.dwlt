@@ -22,10 +22,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 911, y: 421}
-  m_MaxSize: {x: 22006, y: 10021}
+  m_MinSize: {x: 917, y: 442}
+  m_MaxSize: {x: 22012, y: 10021}
   vertical: 0
-  controlID: 2263
+  controlID: 1125
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -123,10 +123,10 @@ MonoBehaviour:
     y: 0
     width: 908
     height: 947
-  m_MinSize: {x: 202, y: 421}
-  m_MaxSize: {x: 4002, y: 8021}
+  m_MinSize: {x: 202, y: 442}
+  m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 2192
+  controlID: 1104
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,8 +145,8 @@ MonoBehaviour:
     y: 0
     width: 908
     height: 486
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 5}
   m_Panes:
   - {fileID: 5}
@@ -180,14 +180,14 @@ MonoBehaviour:
     height: 465
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 0
-  lastFramingTime: 1388.4868445754407
+  lastFramingTime: 183.7234319020116
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.3909007, y: 0.5431215, z: 1.2042583}
+    m_Target: {x: -0.84724903, y: -3.4620457, z: 9.739719}
     speed: 2
-    m_Value: {x: 1.3909007, y: 0.5431215, z: 1.2042583}
+    m_Value: {x: -0.84724903, y: -3.4620457, z: 9.739719}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -211,13 +211,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.0078030895, y: 0.042582877, z: -0.000323742, w: -0.9990746}
+    m_Target: {x: -0.19687274, y: 0.03734387, z: -0.00749173, w: -0.97970235}
     speed: 2
-    m_Value: {x: -0.0078030895, y: 0.042582877, z: -0.000323742, w: -0.9990746}
+    m_Value: {x: -0.19687016, y: 0.037343383, z: -0.007491632, w: -0.9796895}
   m_Size:
-    m_Target: 2.193465
+    m_Target: 12.476817
     speed: 2
-    m_Value: 2.193465
+    m_Value: 12.476817
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -272,8 +272,8 @@ MonoBehaviour:
     y: 0
     width: 310
     height: 947
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 8}
   m_Panes:
   - {fileID: 8}
@@ -308,9 +308,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 14600000
-    m_LastClickedID: 24596
-    m_ExpandedIDs: e0f1ffff9efbffff00000000
+    m_SelectedIDs: f63c0100
+    m_LastClickedID: 81142
+    m_ExpandedIDs: 1ed4ffffecd6ffff9efbffff00000000c85f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -397,19 +397,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/1. Scripts
+    - Assets/2. Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/1. Scripts
+  - Assets/2. Scenes
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Yarom\Documents\GitHub\ISA\Detective Game
+  m_LastProjectPath: C:\Users\Yaromir\Documents\GitHub\ISA\Detective Game
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 9c2d0000
-    m_LastClickedID: 11676
-    m_ExpandedIDs: 00000000422800007c2d000000ca9a3bffffff7f
+    m_SelectedIDs: 102e0000
+    m_LastClickedID: 11792
+    m_ExpandedIDs: 00000000442800007e2d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -437,7 +437,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000422800007c2d000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000442800007e2d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -462,8 +462,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 14600000
-    m_LastClickedInstanceID: 24596
+    m_SelectedInstanceIDs: f63c0100
+    m_LastClickedInstanceID: 81142
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
