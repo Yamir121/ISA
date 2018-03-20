@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     public enum GameState { Zoomed, OnView };
+    public GameState currentState = GameState.OnView;
 
     private static GameManager _instance;
     public static GameManager Instance { get { return _instance; } }

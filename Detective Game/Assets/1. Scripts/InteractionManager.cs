@@ -62,13 +62,17 @@ public class InteractionManager : MonoBehaviour
         
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.collider != null)
+            if (hit.collider != null && GameManager.Instance.currentState == GameManager.GameState.OnView)
             {
                 Debug.Log("hit");
                 var c = hit.collider as BoxCollider;
 
                 cameraMovement.ZoomTo(hit.transform);
                 cameraMovement.Limit(CalcLimits(c, 0));
+            }
+            else if (GameManager.Instance.currentState == GameManager.GameState.Zoomed)
+            {
+                cameraMovement.ZoomOut();
             }
         }
     }
