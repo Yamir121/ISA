@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractionManager : MonoBehaviour
 {
-
+    [HideInInspector]
     public List<BoxCollider> zoomables;
 
     private Movement cameraMovement;
@@ -45,12 +45,12 @@ public class InteractionManager : MonoBehaviour
         mousePosition = Camera.main.ScreenToViewportPoint(Input.mousePosition);
         if (mousePosition.x >= 0.998f)
         {
-            cameraMovement.Move(0);
+            cameraMovement.MoveLeft(mousePosition.x * 1.2f);
         }
 
         if (mousePosition.x <= 0.002f)
         {
-            cameraMovement.Move(1);
+            cameraMovement.MoveRight((1+mousePosition.x*-1) * 1.2f);
         }
 
     }
@@ -64,11 +64,15 @@ public class InteractionManager : MonoBehaviour
         {
             if (hit.collider != null && GameManager.Instance.currentState == GameManager.GameState.OnView)
             {
-                Debug.Log("hit");
-                var c = hit.collider as BoxCollider;
-
-                cameraMovement.ZoomTo(hit.transform);
-                cameraMovement.Limit(CalcLimits(c, 0));
+                try
+                {
+                    Debug.Log("hit");
+                    //hit collider must be a boxcollider
+                    BoxCollider boxCol = hit.collider as BoxCollider;
+                    cameraMovement.ZoomTo(hit.transform);
+                    cameraMovement.SetLimit(CalcLimits(boxCol));
+                }
+                catch { throw new System.Exception("Collider of Raycast.Hit must be a boxcollider"); }
             }
             else if (GameManager.Instance.currentState == GameManager.GameState.Zoomed)
             {
@@ -77,16 +81,14 @@ public class InteractionManager : MonoBehaviour
         }
     }
 
-    private static Vector2 CalcLimits(BoxCollider col, int type)
+    private static Vector3 CalcLimits(BoxCollider col)
     {
         Vector3 pos = col.transform.position;
-        Vector3 f = col.transform.forward;
-        Vector3 r = col.transform.right;
-        Vector3 u = col.transform.up;
-        Vector3 min = col.transform.TransformPoint(col.center - col.size * 0.5f) - pos;
-        Vector3 max = col.transform.TransformPoint(col.center + col.size * 0.5f) - pos;
-        if (type == 0) { return new Vector2(min.x, max.x); }
-        if (type == 1) { return new Vector2(min.y, max.y); }
-        else { return Vector2.zero; }
+        //+ or - 2 is to normalize between the camera and world space
+        float xMin = (pos.x - (col.size.x * 0.5f)+2);
+        float xMax = (pos.x + (col.size.x * 0.5f)-2);
+        float yMax = (pos.y + (col.size.y * 0.5f));
+
+        return new Vector3(xMin, xMax, yMax);
     }
 }

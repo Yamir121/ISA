@@ -11,13 +11,14 @@ public class GameManager : MonoBehaviour {
     public static GameManager Instance { get { return _instance; } }
 
     private void Awake()
-    {
+    {      
         if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);
         }
         else
         {
+            DontDestroyOnLoad(this.gameObject);
             _instance = this;
         }
     }
